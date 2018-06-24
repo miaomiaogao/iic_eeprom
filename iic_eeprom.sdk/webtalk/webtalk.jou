@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# 
+# Start of session at: Sat Jun 23 20:29:30 2018
+# Process ID: 16892
+# Current directory: C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk/webtalk/webtalk.log
+# Journal file: C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

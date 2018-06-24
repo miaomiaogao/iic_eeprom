@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Jun 22 16:23:43 2018
+# Process ID: 1808
+# Current directory: C:/work/projects_ax7010_2/iic_eeprom
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10780 C:\work\projects_ax7010_2\iic_eeprom\iic_eeprom.xpr
+# Log file: C:/work/projects_ax7010_2/iic_eeprom/vivado.log
+# Journal file: C:/work/projects_ax7010_2/iic_eeprom\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd}
+reset_target all [get_files  C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd]
+export_ip_user_files -of_objects  [get_files  C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd] -sync -no_script -force -quiet
+generate_target all [get_files  C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_processing_system7_0_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_gpio_0_0] }
+catch { config_ip_cache -export [get_ips -all system_axi_iic_0_0] }
+catch { config_ip_cache -export [get_ips -all system_rst_ps7_0_50M_0] }
+catch { config_ip_cache -export [get_ips -all system_xbar_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+export_ip_user_files -of_objects [get_files C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 2 {system_processing_system7_0_0_synth_1 system_axi_gpio_0_0_synth_1 system_axi_iic_0_0_synth_1 system_rst_ps7_0_50M_0_synth_1 system_xbar_0_synth_1 system_auto_pc_0_synth_1}
+export_simulation -of_objects [get_files C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd] -directory C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.ip_user_files/sim_scripts -ip_user_files_dir C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.ip_user_files -ipstatic_source_dir C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.cache/compile_simlib/modelsim} {questa=C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.cache/compile_simlib/questa} {riviera=C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.cache/compile_simlib/riviera} {activehdl=C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/system.bd] -top
+add_files -norecurse C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.srcs/sources_1/bd/system/hdl/system_wrapper.vhd
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file mkdir C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk
+file copy -force C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.runs/impl_1/system_wrapper.sysdef C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk/system_wrapper.hdf
+
+launch_sdk -workspace C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk -hwspec C:/work/projects_ax7010_2/iic_eeprom/iic_eeprom.sdk/system_wrapper.hdf
