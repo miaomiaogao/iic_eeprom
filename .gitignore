@@ -85,6 +85,13 @@
 !*.bmm
 !*.xmp
 *.log
+#########
+#readme
+#########
+!*.md
+#########
+#ignore files
+#########
 /*.cache
 /*.runs
 /*.ip_user_files
